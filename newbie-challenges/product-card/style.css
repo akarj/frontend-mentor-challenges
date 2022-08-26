@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(30deg, 38%, 92%);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main.item-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(330px, 90vw, 680px);
+}
+main.item-card > div {
+  display: flex;
+  flex-wrap: wrap;
+}
+main.item-card section.item-image {
+  flex: 0 0 50%;
+}
+main.item-card section.item-image picture {
+  display: flex;
+  height: 100%;
+}
+main.item-card section.item-image img {
+  max-width: 100%;
+  border-radius: 14px 0 0 14px;
+}
+main.item-card section.description {
+  flex: 0 0 50%;
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 0 14px 14px 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: hsl(228deg, 12%, 48%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main.item-card section.description .main-feature {
+  font-family: "Fraunces", serif;
+  font-size: clamp(14px, 8vw, 50.4px);
+}
+main.item-card section.description div.descContainer {
+  padding: 1rem;
+  width: 90%;
+}
+main.item-card section.description div.descContainer span#category {
+  text-transform: uppercase;
+  color: hsl(228deg, 12%, 48%);
+  letter-spacing: 0.75ch;
+}
+main.item-card section.description div.descContainer article span#name {
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  color: hsl(212deg, 21%, 14%);
+}
+main.item-card section.description div.descContainer article p.item-description {
+  color: hsl(228deg, 12%, 48%);
+  line-height: 1.75;
+  font-size: 14px;
+}
+main.item-card section.description div.descContainer article p.item-pricing {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+main.item-card section.description div.descContainer article p.item-pricing > * {
+  gap: 14px;
+}
+main.item-card section.description div.descContainer article p.item-pricing span#main-price {
+  color: hsl(158deg, 36%, 37%);
+}
+main.item-card section.description div.descContainer article p.item-pricing span#original-price {
+  text-decoration: line-through;
+}
+main.item-card section.description div.descContainer button {
+  width: 100%;
+  background-color: hsl(158deg, 36%, 37%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  font-weight: 700;
+  color: hsl(0deg, 0%, 100%);
+  opacity: 0.75;
+  height: clamp(35px, 3vw, 49px);
+  padding: 21px 0;
+  border-radius: 8px;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+}
+main.item-card section.description div.descContainer button:is(:hover, :focus) {
+  opacity: 1;
+  transition: opacity 200ms ease-in-out;
+}
+main.item-card section.description div.descContainer button:focus {
+  outline: none;
+}
+main.item-card section.description div.descContainer button span {
+  font-size: 15.4px;
+}
+
+footer {
+  position: fixed;
+  bottom: 1rem;
+  width: 100%;
+}
+footer .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+footer .attribution a {
+  color: hsl(228deg, 45%, 44%);
+}
+
+@media (max-width: 700px) {
+  section.description {
+    padding: clamp(14px, 5vw, 66.5px);
+  }
+  main.item-card > div {
+    flex-direction: column;
+  }
+  main.item-card section.item-image img {
+    border-radius: 14px 14px 0 0;
+  }
+  main.item-card section.description {
+    border-radius: 0 0 14px 14px;
+  }
+  main.item-card button {
+    cursor: pointer;
+  }
+}
+@media (hover: none) {
+  button {
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
