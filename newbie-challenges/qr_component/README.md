@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution]()
-- Live Site URL: [Card Preview on Live Site]()
+- Solution URL: [Solution](https://github.com/akarj/frontend-mentor-challenges/tree/master/newbie-challenges/qr_component)
+- Live Site URL: [Card Preview on Live Site](https://front-end-mentor-challenges-akarj.netlify.app/newbie-challenges/qr_component/)
 
 ### Built with
 
@@ -40,7 +40,6 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - Mobile-first workflow
-- Box Shadow
 
 ### What I learned
 
@@ -48,5 +47,5 @@ I learned how to center a div, and use of semantic HTML5 markup syntax. The use 
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/akarj)
-- Twitter - [@yourusername](https://www.twitter.com/akarj_)
+- Frontend Mentor - [@akarj](https://www.frontendmentor.io/profile/akarj)
+- Twitter - [@akarj\_](https://www.twitter.com/akarj_)
