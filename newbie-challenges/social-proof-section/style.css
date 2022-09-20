@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 15px;
+  font-family: "League Spartan", sans-serif;
+  display: grid;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+body main {
+  margin: auto;
+  width: clamp(70vw, 70vw, 80%);
+  width: 70%;
+  min-height: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  padding-bottom: 6rem;
+}
+body main header {
+  display: flex;
+  flex-direction: column;
+}
+body main header h1 {
+  text-align: left;
+  font-size: clamp(2em, 5vw, 3.5em);
+  max-width: 400px;
+  color: hsl(300deg, 43%, 22%);
+}
+body main header p {
+  width: 60%;
+  margin-top: 0;
+  font-size: clamp(1em, 1.2vw, 1.25em);
+  color: hsl(303deg, 10%, 53%);
+  line-height: 1.5;
+  font-weight: 500;
+}
+body main section.description {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+body main section.description .review {
+  border-radius: 4px;
+  padding-left: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 3rem;
+  margin: 0.5rem 0;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  background-color: hsla(333deg, 80%, 67%, 0.13);
+}
+body main section.description .review .review-rating {
+  margin-right: 1.5rem;
+}
+body main section.description .review .review-rating svg {
+  margin: 0 clamp(0px, 0.5vw, 2px);
+}
+body main section.description .review .review-description {
+  font-size: clamp(1rem, 1.5vw, 1rem);
+  color: hsl(300deg, 43%, 22%);
+}
+body main section.description .review:nth-child(1) {
+  transform: translateX(-80px);
+}
+body main section.description .review:nth-child(2) {
+  transform: translateX(-40px);
+  margin: 1rem 0;
+}
+body main section.card-description {
+  grid-column: 1/-1;
+  display: flex;
+  gap: 20px;
+  align-items: end;
+  justify-content: space-between;
+}
+body main section.card-description article.feedback-card {
+  background-color: hsl(300deg, 43%, 22%);
+  border-radius: 6px;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  max-width: 400px;
+}
+body main section.card-description article.feedback-card picture {
+  grid-area: "picture";
+  display: grid;
+  align-items: center;
+}
+body main section.card-description article.feedback-card picture img {
+  height: 30px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+body main section.card-description article.feedback-card .user-info strong,
+body main section.card-description article.feedback-card .description {
+  color: hsl(300deg, 24%, 96%);
+}
+body main section.card-description article.feedback-card p.user-info {
+  grid-area: "name";
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.25rem;
+}
+body main section.card-description article.feedback-card p.user-info span {
+  color: hsl(333deg, 80%, 67%);
+  font-weight: 500;
+}
+body main section.card-description article.feedback-card p.description {
+  margin: 0.5rem;
+  grid-area: "description";
+  grid-row: 2/3;
+  grid-column: 1/-1;
+  line-height: 1.25;
+  font-weight: 500;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+}
+body main section.card-description article.feedback-card:nth-child(2) {
+  transform: translateY(10%);
+}
+body main section.card-description article.feedback-card:nth-child(3) {
+  transform: translateY(20%);
+}
+body .attribution {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  font-size: 11px;
+  text-align: center;
+}
+body .attribution a {
+  color: hsl(228deg, 45%, 44%);
+}
+
+@media (max-width: 1200px) {
+  body main {
+    display: block;
+  }
+}
+@media (max-width: 700px) {
+  body main {
+    margin-top: 5rem;
+    width: 90%;
+    padding-bottom: 8rem;
+  }
+  body main header {
+    place-items: center;
+  }
+  body main header h1 {
+    width: 60%;
+    text-align: center;
+  }
+  body main header p {
+    width: 100%;
+    line-height: 1.5;
+    font-size: 1.1rem;
+    text-align: center;
+    font-weight: 500;
+  }
+  body main section.description .review {
+    padding: 1rem;
+    width: 100%;
+    flex-direction: column;
+  }
+  body main section.description .review:nth-child(2), body main section.description .review:nth-child(1) {
+    transform: translateX(0);
+  }
+  body main section.description .review:nth-child(2) {
+    margin: 0.5rem 0;
+  }
+  body main section.card-description {
+    display: grid;
+    max-width: 100%;
+    padding-top: 2rem;
+    grid-template-columns: 1fr;
+    row-gap: 0.5rem;
+  }
+  body main section.card-description:nth-child(2) {
+    transform: initial;
+  }
+  body main section.card-description:nth-child(3) {
+    transform: initial;
+  }
+  body .attribution {
+    position: relative;
+    bottom: -68vh;
+    width: 100%;
+    font-size: 11px;
+    text-align: center;
+  }
+  body .attribution a {
+    color: hsl(228deg, 45%, 44%);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
