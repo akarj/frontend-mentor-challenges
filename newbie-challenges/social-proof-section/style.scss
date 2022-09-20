@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap");
+
+$mobile: 375px;
+$desktop: 1440px;
+
+$color-primary: hsl(300, 43%, 22%);
+$color-primary-light: hsla(333, 80%, 67%, 0.13);
+
+$color-neutral: hsl(303, 10%, 53%);
+$color-neutral-light: hsl(300, 24%, 96%);
+
+$white: hsl(0, 0%, 100%);
+
+$fontSize: 15px;
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-size: $fontSize;
+	font-family: "League Spartan", sans-serif;
+
+	display: grid;
+
+	padding: 0;
+	margin: 0;
+
+	height: 100vh;
+	overflow-y: auto;
+
+	main {
+		margin: auto;
+		width: clamp(70vw, 70vw, 80%);
+		width: 70%;
+
+		min-height: 80%;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: repeat(2, 1fr);
+
+		header {
+			display: flex;
+			flex-direction: column;
+
+			h1 {
+				text-align: left;
+				font-size: clamp(2em, 5vw, 3.5em);
+				max-width: 400px;
+				color: $color-primary;
+			}
+
+			p {
+				width: 60%;
+				margin-top: 0;
+				font-size: clamp(1em, 1.2vw, 1.25em);
+				color: $color-neutral;
+				line-height: 1.5;
+				font-weight: 500;
+			}
+		}
+
+		section.description {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+			justify-content: center;
+
+			.review {
+				border-radius: 4px;
+				padding-left: 2rem;
+				padding-top: 1rem;
+				padding-bottom: 1rem;
+				padding-right: 3rem;
+
+				margin: 0.5rem 0;
+
+				width: 70%;
+
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+				gap: 0.5rem;
+				background-color: $color-primary-light;
+
+				.review-rating {
+					svg {
+						margin: 0 clamp(0px, 0.5vw, 2px);
+					}
+					margin-right: 1.5rem;
+				}
+
+				.review-description {
+					font-size: clamp(1rem, 1.5vw, 1rem);
+
+					color: $color-primary;
+				}
+				&:nth-child(1) {
+					transform: translateX(-80px);
+				}
+				&:nth-child(2) {
+					transform: translateX(-40px);
+					margin: 1rem 0;
+				}
+			}
+		}
+
+		section.card-description {
+			grid-column: 1/-1;
+			display: flex;
+
+			gap: 20px;
+			align-items: end;
+			justify-content: space-between;
+
+			article.feedback-card {
+				background-color: $color-primary;
+				border-radius: 6px;
+				padding: 1.5rem;
+				display: grid;
+				grid-template-columns: 50px 1fr;
+
+				max-width: 400px;
+
+				picture {
+					grid-area: "picture";
+					display: grid;
+					align-items: center;
+					img {
+						height: 30px;
+						aspect-ratio: 1/1;
+						border-radius: 50%;
+						object-fit: cover;
+					}
+				}
+				.user-info strong,
+				.description {
+					color: $color-neutral-light;
+				}
+				p.user-info {
+					grid-area: "name";
+					display: flex;
+					flex-direction: column;
+					row-gap: 0.25rem;
+
+					span {
+						color: hsl(333, 80%, 67%);
+						font-weight: 500;
+					}
+				}
+				p.description {
+					margin: 0.5rem;
+					grid-area: "description";
+					grid-row: 2/3;
+					grid-column: 1/-1;
+					line-height: 1.25;
+					font-weight: 500;
+					font-size: clamp(1rem, 3vw, 1.2rem);
+				}
+				&:nth-child(2) {
+					transform: translateY(10%);
+				}
+				&:nth-child(3) {
+					transform: translateY(20%);
+				}
+			}
+		}
+
+		padding-bottom: 6rem;
+	}
+
+	.attribution {
+		position: absolute;
+		bottom: 10px;
+		left: 0;
+		// display: none;
+		width: 100%;
+		font-size: 11px;
+		text-align: center;
+
+		a {
+			color: hsl(228, 45%, 44%);
+		}
+	}
+}
+
+@media (max-width: 1200px) {
+	body {
+		main {
+			display: block;
+		}
+	}
+}
+
+@media (max-width: 700px) {
+	body {
+		main {
+			margin-top: 5rem;
+			width: 90%;
+
+			header {
+				place-items: center;
+
+				h1 {
+					width: 60%;
+					text-align: center;
+				}
+
+				p {
+					width: 100%;
+					line-height: 1.5;
+					font-size: 1.1rem;
+
+					text-align: center;
+					font-weight: 500;
+				}
+			}
+
+			section.description {
+				.review {
+					padding: 1rem;
+					width: 100%;
+
+					&:nth-child(2),
+					&:nth-child(1) {
+						transform: translateX(0);
+					}
+					&:nth-child(2) {
+						margin: 0.5rem 0;
+					}
+
+					flex-direction: column;
+				}
+			}
+
+			section.card-description {
+				display: grid;
+				max-width: 100%;
+				padding-top: 2rem;
+				grid-template-columns: 1fr;
+				row-gap: 0.5rem;
+
+				&:nth-child(2) {
+					transform: initial;
+				}
+				&:nth-child(3) {
+					transform: initial;
+				}
+			}
+
+			padding-bottom: 8rem;
+		}
+
+		.attribution {
+			position: relative;
+			bottom: -68vh;
+			width: 100%;
+			font-size: 11px;
+			text-align: center;
+
+			a {
+				color: hsl(228, 45%, 44%);
+			}
+		}
+	}
+}
