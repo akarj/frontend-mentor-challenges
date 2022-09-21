@@ -169,19 +169,18 @@ body {
 
 		padding-bottom: 6rem;
 	}
+}
+.attribution {
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+	// display: none;
+	width: 100%;
+	font-size: 11px;
+	text-align: center;
 
-	.attribution {
-		position: absolute;
-		bottom: 10px;
-		left: 0;
-		// display: none;
-		width: 100%;
-		font-size: 11px;
-		text-align: center;
-
-		a {
-			color: hsl(228, 45%, 44%);
-		}
+	a {
+		color: hsl(228, 45%, 44%);
 	}
 }
 
@@ -240,6 +239,7 @@ body {
 				padding-top: 2rem;
 				grid-template-columns: 1fr;
 				row-gap: 0.5rem;
+				place-content: center;
 
 				&:nth-child(2) {
 					transform: initial;
@@ -251,17 +251,17 @@ body {
 
 			padding-bottom: 8rem;
 		}
+	}
 
-		.attribution {
-			position: relative;
-			bottom: -68vh;
-			width: 100%;
-			font-size: 11px;
-			text-align: center;
+	.attribution {
+		position: relative;
+		bottom: -10vh;
+		width: 100%;
+		font-size: 11px;
+		text-align: center;
 
-			a {
-				color: hsl(228, 45%, 44%);
-			}
+		a {
+			color: hsl(228, 45%, 44%);
 		}
 	}
 }
