@@ -133,7 +133,8 @@ body main section.card-description article.feedback-card:nth-child(2) {
 body main section.card-description article.feedback-card:nth-child(3) {
   transform: translateY(20%);
 }
-body .attribution {
+
+.attribution {
   position: absolute;
   bottom: 10px;
   left: 0;
@@ -141,7 +142,7 @@ body .attribution {
   font-size: 11px;
   text-align: center;
 }
-body .attribution a {
+.attribution a {
   color: hsl(228deg, 45%, 44%);
 }
 
@@ -187,6 +188,7 @@ body .attribution a {
     padding-top: 2rem;
     grid-template-columns: 1fr;
     row-gap: 0.5rem;
+    place-content: center;
   }
   body main section.card-description:nth-child(2) {
     transform: initial;
@@ -194,14 +196,14 @@ body .attribution a {
   body main section.card-description:nth-child(3) {
     transform: initial;
   }
-  body .attribution {
+  .attribution {
     position: relative;
-    bottom: -68vh;
+    bottom: -10vh;
     width: 100%;
     font-size: 11px;
     text-align: center;
   }
-  body .attribution a {
+  .attribution a {
     color: hsl(228deg, 45%, 44%);
   }
 }
