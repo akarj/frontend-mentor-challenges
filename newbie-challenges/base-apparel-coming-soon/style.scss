@@ -1,0 +1,334 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+/*  || Variables */
+$mobile: 375px;
+$desktop: 1440px;
+
+$color-primary-main: hsl(0, 36%, 70%);
+$color-primary-dark: hsl(0, 93%, 68%);
+
+$color-secondary-main: hsl(0, 6%, 24%);
+
+$color-gradients-main: linear-gradient(
+	135deg,
+	hsl(0, 0%, 100%),
+	hsl(0, 100%, 98%)
+);
+$color-gradients-secondary: linear-gradient(
+	135deg,
+	hsl(0, 80%, 86%),
+	hsl(0, 74%, 74%)
+);
+
+/*  || General Styling */
+* {
+	box-sizing: border-box;
+}
+
+:root {
+	font-size: 16px;
+	font-family: "Josefin Sans", sans-serif;
+}
+
+button {
+	font: initial;
+}
+
+/*  || Utility classes */
+.bdr {
+	outline: 0.5px solid black;
+}
+.bgc {
+	background-color: #deb8879f;
+}
+.error {
+	caret-color: red;
+	color: red;
+}
+
+/*  || Blocks */
+body {
+	display: grid;
+	margin: 0;
+	padding: 0;
+	color: $color-primary-main;
+	grid-template-rows: 20vh 1fr 20vh 10vh;
+	grid-template-columns: 8vw repeat(11, 1fr);
+
+	width: 100vw;
+	height: 100vh;
+
+	& > * {
+		z-index: 10;
+	}
+}
+
+.bgContainer {
+	grid-column: 1/8;
+	grid-row: 1/-1;
+	z-index: 1;
+	background-image: url(images/bg-pattern-desktop.svg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	object-fit: cover;
+}
+
+.logo {
+	grid-column: 2/7;
+	grid-row: 1/2;
+	padding-left: 5vw;
+	display: flex;
+	align-items: center;
+}
+
+aside {
+	grid-column: 8/-1;
+	grid-row: 1/-1;
+	margin: 0;
+	padding: 0;
+	background-image: url(images/hero-desktop.jpg);
+	background-size: cover;
+	object-fit: cover;
+}
+
+main {
+	grid-column: 2/7;
+	grid-row: 2/4;
+	width: 80%;
+	padding-left: 5vw;
+	padding-right: 1vw;
+}
+
+.heading {
+	font-weight: 300;
+	text-transform: uppercase;
+	font-size: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+footer {
+	position: relative;
+	grid-row: 4/5;
+	grid-column: 2/7;
+	text-align: center;
+}
+
+section.user-info {
+	margin-top: 5vh;
+}
+
+form {
+	.container {
+		width: 90%;
+		padding-right: 3.8rem;
+
+		display: flex;
+		align-items: center;
+		margin-bottom: 1vh;
+
+		border: 1px solid $color-primary-main;
+		border-radius: 50px;
+
+		position: relative;
+		height: 3.25rem;
+		input {
+			flex: 1;
+			// max-width: 70%;
+			background-color: transparent;
+			box-shadow: none;
+			outline: none;
+
+			appearance: none;
+			-moz-appearance: none;
+			-webkit-appearance: none;
+
+			box-shadow: none;
+			border: none;
+
+			padding-left: 2rem;
+
+			caret-color: $color-primary-main;
+			font-size: 16px;
+			font-family: "Josefin Sans", sans-serif;
+
+			&::-webkit-input-placeholder,
+			&::placeholder {
+				color: $color-primary-main;
+				font-weight: 500;
+			}
+		}
+
+		span {
+			opacity: 0;
+		}
+
+		button {
+			background-image: $color-gradients-secondary;
+
+			padding: 1rem 2.5rem;
+			cursor: pointer;
+			border-radius: 50px;
+			border: none;
+			outline: none;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			box-shadow: 2px 2px 5px $color-primary-main;
+			transition: all 250ms ease-in-out;
+
+			position: absolute;
+			right: 0%;
+
+			translate: 2.2vw;
+			&:hover {
+				box-shadow: 2px 12px 16px $color-primary-main;
+				background-image: linear-gradient(
+					135deg,
+					hsl(0, 59%, 87%),
+					hsla(0, 35%, 76%, 0.747)
+				);
+			}
+		}
+	}
+	small {
+		opacity: 0;
+		margin-top: 1vh;
+		padding-left: calc(2rem + 2px);
+	}
+	&:has(input:invalid.err) {
+		.container {
+			border-color: $color-primary-dark;
+		}
+		small,
+		span {
+			opacity: 1;
+		}
+	}
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
+
+/*  || Elements */
+.heading__title {
+	font-weight: 300;
+	display: flex;
+	flex-direction: column;
+	letter-spacing: 0.25ch;
+	color: $color-primary-main;
+}
+
+.heading__emp {
+	color: initial;
+}
+
+.aside__modalContainer {
+	display: none;
+}
+
+.aside__modal {
+	width: 100%;
+	height: auto;
+}
+
+.description__para {
+	letter-spacing: 0.1ch;
+	line-height: 1.5;
+}
+
+/* || Mobile Design*/
+@media screen and (max-width: 1500px) {
+	form {
+		.container {
+			padding-right: 20vh;
+		}
+	}
+}
+
+/* ||Block */
+@media screen and (max-width: 1000px) {
+	body {
+		grid-template-rows: 10vh 30vh 1fr 5vh;
+		grid-template-columns: 1fr;
+	}
+	header.logo {
+		grid-column: 1/-1;
+		grid-row: 1/2;
+	}
+	aside {
+		background-image: url(images/hero-mobile.jpg);
+		grid-column: 1/-1;
+		grid-row: 2/3;
+	}
+	main {
+		grid-row: 3/4;
+		grid-column: 1/-1;
+		padding: 0;
+
+		width: 100%;
+
+		display: flex;
+		flex-direction: column;
+
+		align-items: center;
+		justify-content: center;
+	}
+
+	section.description {
+		width: 100%;
+		padding-left: 5vw;
+		padding-right: 5vw;
+		text-align: center;
+	}
+	section.user-info {
+		width: 100%;
+		padding-left: 5vw;
+		padding-right: 5vw;
+		margin-top: 2rem;
+	}
+
+	footer {
+		grid-row: 4/-1;
+		grid-column: 1/-1;
+		position: relative;
+		top: 2vh;
+	}
+
+	/* ||Element */
+	.aside__modalContainer {
+		display: block;
+	}
+
+	.heading__title {
+		display: flex;
+		align-items: center;
+		justify-items: center;
+	}
+
+	.description__para {
+		letter-spacing: unset;
+		line-height: 1.5;
+	}
+
+	/* ||Modifier */
+
+	form {
+		width: 100%;
+		// max-width: ;
+		.container {
+			width: 100%;
+
+			padding-right: 0;
+			input {
+				max-width: 65%;
+			}
+		}
+	}
+}
