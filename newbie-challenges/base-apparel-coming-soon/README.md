@@ -27,6 +27,7 @@ Users should be able to:
 ### Screenshot
 
 ![Desktop](./solution/Desktop.png)
+![Desktop Active](./solution/DesktopActive.png)
 ![Mobile](./solution/Mobile.png)
 
 ### Links
@@ -41,6 +42,7 @@ Users should be able to:
 - Grid layout
 - Flexbox
 - Mobile-first workflow
+- SASS
 
 ### What I learned
 
